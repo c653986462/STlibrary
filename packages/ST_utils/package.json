@@ -1,0 +1,44 @@
+{
+  "name": "st_utils",
+  "version": "0.0.1",
+  "description": "ST_utils",
+  "main": "lib/index.umd.js",
+  "jsnext:main": "lib/index.umd.js",
+  "module": "lib/index.cjs.js",
+  "author": "rookieLeague",
+  "license": "MIT",
+  "private": false,
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rimraf ./lib",
+    "build": "set NODE_ENV='production' && rollup -c ./config/rollup.conf.prod.js",
+    "dev": "set NODE_ENV='development' && rollup -c ./config/rollup.conf.dev.js -w",
+    "reload": "livereload 'lib/'",
+    "serve": "npm-run-all --parallel dev"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "typings": "index.d.ts",
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "crypto-js": "^4.0.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.36.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0"
+  }
+}
