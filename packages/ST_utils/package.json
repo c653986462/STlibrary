@@ -11,10 +11,7 @@
   "sideEffects": false,
   "scripts": {
     "clean": "rimraf ./lib",
-    "build": "set NODE_ENV='production' && rollup -c ./config/rollup.conf.prod.js",
-    "dev": "set NODE_ENV='development' && rollup -c ./config/rollup.conf.dev.js -w",
-    "reload": "livereload 'lib/'",
-    "serve": "npm-run-all --parallel dev"
+    "build": "set NODE_ENV='production' && rollup -c ./config/rollup.conf.prod.js"
   },
   "husky": {
     "hooks": {
@@ -36,9 +33,11 @@
     "rollup": "^2.36.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-node-polyfills": "^0.2.1",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-replace": "^2.2.0"
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-serve": "^1.1.0"
   }
 }

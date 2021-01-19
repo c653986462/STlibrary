@@ -35,7 +35,7 @@ export default {
   plugins: [...base.plugins, ...plugins],
   output: [{
     ...resolveOutput('iife'),
-    name: '$jevaUtils',
+    name: '$ST_utils',
     external: base.external,
     globals: base.globals
   }]
