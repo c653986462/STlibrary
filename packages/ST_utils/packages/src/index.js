@@ -1,23 +1,4 @@
-import {
-  __DownLoad,
-  __Time,
-  __guid,
-  __num,
-  mapTree,
-  urlParams,
-  watermark,
-  setWatermark,
-  mapToBlob
-} from './utils'
+import * as _utils from './utils'
+import * as _v2 from './v2'
 
-export {
-  __DownLoad,
-  __Time,
-  __guid,
-  __num,
-  mapTree,
-  urlParams,
-  watermark,
-  setWatermark,
-  mapToBlob
-}
+export { _utils, _v2 }
