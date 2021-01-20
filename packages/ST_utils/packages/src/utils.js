@@ -2,7 +2,7 @@
  * 补充 0
  * @param {Number} num
  */
-export function __num (num) {
+export function __num(num) {
   return num < 10 ? '0' + num : num
 }
 
@@ -11,7 +11,7 @@ export function __num (num) {
  * @param {Date} date
  */
 
-export function __Time (date) {
+export function __Time(date) {
   if (date === 0) return '-'
   const Y = date.getFullYear() // 年
   const m = __num(date.getMonth() + 1) // 月
@@ -62,11 +62,11 @@ export const watermark = {
 }
 
 /**
- * 将URL参数转化为对象形势
+ * 将URL参数转化为对象形式
  * @param {String} params URL参数
  */
 
-export function urlParams (params) {
+export function urlParams(params) {
   return new Promise(resolve => {
     const v = params.split('&').reduce((pre, cur) => {
       Reflect.set(pre, cur.split('=')[0], cur.split('=')[1])
@@ -82,7 +82,7 @@ export function urlParams (params) {
  * @returns {File}
  */
 
-export function __DownLoad (href, name) {
+export function __DownLoad(href, name) {
   const a = document.createElement('a')
   if (name) a.setAttribute('download', name)
   if (href) a.setAttribute('href', href)
@@ -94,7 +94,7 @@ export function __DownLoad (href, name) {
 /**
  * 生成 guid
  */
-export function __guid () {
+export function __guid() {
   return 'xxxxxxxxxxxxxxxyxxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
     const r = (Math.random() * 16) | 0
     const v = c === 'x' ? r : (r & 0x3) | 0x8
@@ -108,7 +108,7 @@ export function __guid () {
  * @param {String} children 子节点名称
  * @param {Object} props 更改的键名映射 { oldKey: newKey }
  */
-export function mapTree (ref, children = 'children', props = {}) {
+export function mapTree(ref, children = 'children', props = {}) {
   const vRef = Object.keys(props).reduce((pre, cur) => {
     return { ...pre, [props[cur]]: ref[cur] }
   }, {})
@@ -125,7 +125,7 @@ export function mapTree (ref, children = 'children', props = {}) {
  * 将以base64的url数据转换为Blob
  * @param {String} urlData 用url方式表示的base64数据
  */
-export function mapToBlob (urlData) {
+export function mapToBlob(urlData) {
   const arr = urlData.split(',')
   const mime = arr[0].match(/:(.*?);/)[1]
   const bstr = atob(arr[1])
