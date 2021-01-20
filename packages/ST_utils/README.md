@@ -22,6 +22,9 @@ build // 打包，packages内的所有工具函数打包在lib文件夹
     ├─src  
     │  ├─index 工具函数出口  
     │  ├─utils.js 工具函数js  
+    │  ├─validate.js 验证类，验证邮箱，手机号等等  
+    │  ├─localStore.js localStore读取、写入、删除等操作类
+    │  ├─cookie.js cookie读取、写入等操作类
     │  ┆  
     │  └─v2.js 工具函数js  
     └─main.js 工具函数打包出口
